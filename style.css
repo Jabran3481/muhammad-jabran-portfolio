@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    background: #0f172a;
+    position: fixed;
+    width: 80%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+.hero {
+    text-align: center;
+    padding: 150px 20px 100px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.btn, .btn-outline {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 10px;
+    display: inline-block;
+}
+
+.btn {
+    background: #6366f1;
+    color: white;
+}
+
+.btn:hover {
+    background: #4f46e5;
+}
+
+.btn-outline {
+    border: 1px solid #6366f1;
+    color: #6366f1;
+}
+
+section {
+    padding: 80px 10%;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #0f172a;
+}
