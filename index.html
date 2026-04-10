@@ -1,95 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Muhammad Jabran | AI Engineer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Jabran | AI Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Inter',sans-serif;
+background:#0b1120;
+color:#e2e8f0;
+overflow-x:hidden;
+}
+
+/* Navbar */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(10,15,35,0.8);
+backdrop-filter: blur(10px);
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+nav h2{color:#60a5fa}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+.theme-toggle{
+cursor:pointer;
+padding:8px 14px;
+border-radius:8px;
+background:#1e293b;
+}
+
+/* Hero */
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+}
+
+.hero h1{
+font-size:48px;
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero h2{
+margin-top:10px;
+font-weight:400;
+}
+
+.hero p{
+margin-top:15px;
+max-width:600px;
+opacity:0.8;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 22px;
+background:#6366f1;
+border-radius:10px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+section{
+padding:100px 80px;
+}
+
+h2.section-title{
+font-size:32px;
+margin-bottom:20px;
+}
+
+/* Projects */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:16px;
+transition:0.3s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* Modal */
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.modal-content{
+background:#0f172a;
+padding:40px;
+border-radius:16px;
+max-width:600px;
+}
+
+.close{
+float:right;
+cursor:pointer;
+}
+
+/* Contact */
+.contact{
+text-align:center;
+}
+
+.profile{
+width:140px;
+border-radius:50%;
+margin-bottom:20px;
+border:4px solid #6366f1;
+}
+
+/* light theme */
+.light{
+background:#f8fafc;
+color:#0f172a;
+}
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+</style>
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <h3>MJ</h3>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+<div id="particles-js"></div>
+
+<nav>
+<h2>Jabran</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="theme-toggle" onclick="toggleTheme()">Toggle</div>
+</nav>
 
 <section class="hero">
-    <h1>Muhammad Jabran</h1>
-    <h2>AI / Machine Learning Engineer</h2>
-    <p>
-        Building intelligent systems powered by deep learning, multimodal AI, 
-        and mathematical optimization.
-    </p>
-    <div class="hero-buttons">
-        <a href="#projects" class="btn">View Projects</a>
-        <a href="mailto:yourmail@gmail.com" class="btn-outline">Contact Me</a>
-    </div>
+<div>
+<h1 id="typewriter"></h1>
+<h2>AI / Machine Learning Engineer</h2>
+<p>Building intelligent AI systems powered by deep learning, multimodal models, and optimization.</p>
+<a href="#projects" class="btn">View Projects</a>
+</div>
 </section>
 
 <section id="about">
-    <h2>About Me</h2>
-    <p>
-        Final-year BS Mathematics student specializing in Data Science. 
-        Strong foundation in mathematical modeling, probability, optimization, and AI systems.
-    </p>
-    <p>
-        Experienced in building computer vision models, multimodal AI assistants, 
-        dynamic pricing engines, fraud detection systems, and NLP-based chatbots.
-    </p>
+<h2 class="section-title">About Me</h2>
+<p>I am a BS Mathematics student specializing in Data Science with strong expertise in AI, machine learning, and mathematical optimization. I build real-world intelligent systems including accessibility tools, chatbots, and deep learning models.</p>
 </section>
 
 <section id="projects">
-    <h2>Projects</h2>
+<h2 class="section-title">Projects</h2>
+<div class="projects">
 
-    <div class="card">
-        <h3>AI-Powered Accessibility Assistant</h3>
-        <p>Multimodal AI system using CLIP and BLIP for image & video captioning with text-to-speech integration.</p>
-    </div>
+<div class="card" onclick="openModal('pricing')">
+<h3>AI Dynamic Pricing Engine</h3>
+<p>Intelligent pricing optimization for e-commerce.</p>
+</div>
 
-    <div class="card">
-        <h3>Traffic Sign Classification</h3>
-        <p>CNN-based deep learning model deployed with Streamlit for real-time predictions.</p>
-    </div>
+<div class="card" onclick="openModal('chatbot')">
+<h3>Grocery E-Commerce Chatbot</h3>
+<p>NLP based automated chatbot system.</p>
+</div>
 
-    <div class="card">
-        <h3>Credit Card Fraud Detection</h3>
-        <p>Supervised ML model handling class imbalance and optimized with precision-recall metrics.</p>
-    </div>
+<div class="card" onclick="openModal('transcription')">
+<h3>Video & Audio Transcription</h3>
+<p>Speech-to-text processing pipeline.</p>
+</div>
 
-    <div class="card">
-        <h3>AI Dynamic Pricing Engine</h3>
-        <p>Machine learning-based pricing optimization system for e-commerce.</p>
-    </div>
+<div class="card">
+<h3>Traffic Sign Classification</h3>
+<p>CNN based classification system.</p>
+</div>
 
+<div class="card">
+<h3>Credit Card Fraud Detection</h3>
+<p>ML model for fraud detection.</p>
+</div>
+
+</div>
 </section>
 
-<section id="research">
-    <h2>Research Interests</h2>
-    <p>
-        Multimodal AI | Large Language Models | AI for Accessibility | 
-        Mathematical Optimization | Applied Deep Learning
-    </p>
+<section id="contact" class="contact">
+<h2 class="section-title">Contact</h2>
+<img src="profile.jpg" class="profile">
+<p>Email: jabrankhan3481@gmail.com</p>
+<p>Contact No: 03107103481</p>
+<p>LinkedIn: linkedin.com/in/jabran-khan-79799b2b8</p>
 </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yourmail@gmail.com</p>
-    <p>LinkedIn: your-linkedin</p>
-    <p>GitHub: your-github</p>
-</section>
+<!-- Modal -->
+<div class="modal" id="modal">
+<div class="modal-content" id="modal-body">
+<span class="close" onclick="closeModal()">X</span>
+</div>
+</div>
 
-<footer>
-    <p>© 2026 Muhammad Jabran. All Rights Reserved.</p>
-</footer>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS.load('particles-js','https://cdn.jsdelivr.net/particles.js/2.0.0/particles.json');
 
-<script src="script.js"></script>
+const text="MUHAMMAD JABRAN";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById('typewriter').innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,80);
+}
+}
+type();
+
+function toggleTheme(){
+document.body.classList.toggle('light');
+}
+
+function openModal(project){
+const modal=document.getElementById('modal');
+const body=document.getElementById('modal-body');
+
+if(project==='pricing'){
+body.innerHTML=`<span class="close" onclick="closeModal()">X</span>
+<h2>AI Dynamic Pricing Engine</h2>
+<p>Designed intelligent pricing optimization module for e-commerce platform using demand modeling and optimization.</p>
+<p><b>Tech:</b> Python, ML, Optimization, Pandas</p>`;
+}
+
+if(project==='chatbot'){
+body.innerHTML=`<span class="close" onclick="closeModal()">X</span>
+<h2>Grocery E-Commerce Chatbot</h2>
+<p>AI chatbot for customer queries and recommendations using NLP.</p>
+<p><b>Tech:</b> Python, NLP, Transformers</p>`;
+}
+
+if(project==='transcription'){
+body.innerHTML=`<span class="close" onclick="closeModal()">X</span>
+<h2>Video & Audio Transcription</h2>
+<p>Speech to text automated pipeline.</p>
+<p><b>Tech:</b> Python, Speech Models</p>`;
+}
+
+modal.style.display='flex';
+}
+
+function closeModal(){
+document.getElementById('modal').style.display='none';
+}
+</script>
+
 </body>
 </html>
